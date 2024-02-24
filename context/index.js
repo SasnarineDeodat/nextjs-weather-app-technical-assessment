@@ -19,7 +19,7 @@ export const StateContextProvider = ({ children }) => {
         aggregateHours: "24",
         location: place,
         contentType: "json",
-        unitGroup: "metric",
+        unitGroup: "us",
         shortColumnNames: 0,
       },
       headers: {

@@ -46,7 +46,7 @@ const BackgroundLayout = () => {
     <Image
       src={image.src}
       alt="weather_image"
-      className="fixed left-0 top-0 -z-[10] opacity-30"
+      className="fixed left-0 top-0 -z-[10] opacity-30 min-h-screen object-cover"
       sizes="100vw"
       fill
     />

@@ -51,7 +51,7 @@ const WeatherCard = ({
       <div className="flex w-full just-center, items-center gap-4 mt-12 mb-4">
         <Image src={icon} alt="weather_icon" width={64} height={64} />
         <p className="font-bold text-5xl flex justify-center items-center">
-          {temperature} &deg;C
+          {temperature} &deg;F
         </p>
       </div>
       <div className="font-bold text-center text-xl">{place}</div>
