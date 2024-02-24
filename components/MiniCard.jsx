@@ -42,7 +42,7 @@ const MiniCard = ({ time, temp, iconString }) => {
       </p>
       <hr />
       <div className="w-full flex justify-center items-center flex-1">
-        <Image src={icon} alt="forecast not available" width={64} height={64} />
+        <Image src={icon} alt="forecast unavailable" width={64} height={64} />
       </div>
       <p className="text-center font-bold">{temp}&deg;C</p>
     </div>
