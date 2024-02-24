@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Home component displaying the main page with a navigation button to the weather page
 export default function Home() {
   return (
     <div className="flex justify-center items-center text-center h-screen flex-col">

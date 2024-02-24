@@ -1,6 +1,8 @@
 "use client";
+// Represents current weather condition in a small, concise format
 import { useEffect, useState } from "react";
 import { useDate } from "@/utils/useDate";
+//icons
 import sun from "/public/icons/sun.png";
 import cloud from "/public/icons/cloud.png";
 import fog from "/public/icons/fog.png";
@@ -23,6 +25,7 @@ const WeatherCard = ({
   const { time } = useDate();
 
   useEffect(() => {
+    // Logic to set the correct weather icon based on conditions
     if (iconString) {
       if (iconString.toLowerCase().includes("cloud")) {
         setIcon(cloud);
@@ -43,6 +46,7 @@ const WeatherCard = ({
   }, [iconString]);
 
   return (
+    // Layout for the weather card component
     <div className="w-[22rem] min-w-[22rem] h-[30rem] glassCard p-4">
       <div className="flex w-full just-center, items-center gap-4 mt-12 mb-4">
         <Image src={icon} alt="weather_icon" width={64} height={64} />

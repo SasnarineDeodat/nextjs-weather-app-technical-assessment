@@ -1,5 +1,8 @@
 "use client";
+// Displays weather information of upcoming days for a selected location
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+//icons
 import sun from "/public/icons/sun.png";
 import cloud from "/public/icons/cloud.png";
 import fog from "/public/icons/fog.png";
@@ -7,12 +10,12 @@ import rain from "/public/icons/rain.png";
 import snow from "/public/icons/snow.png";
 import storm from "/public/icons/storm.png";
 import wind from "/public/icons/windy.png";
-import Image from "next/image";
 
 const MiniCard = ({ time, temp, iconString }) => {
   const [icon, setIcon] = useState();
 
   useEffect(() => {
+    // Sets the appropriate weather icon based on the iconString
     if (iconString) {
       if (iconString.toLowerCase().includes("cloud")) {
         setIcon(cloud);
@@ -32,6 +35,7 @@ const MiniCard = ({ time, temp, iconString }) => {
     }
   }, [iconString]);
   return (
+    // Layout for the mini weather card
     <div className="glassCard w-[10rem] h-[10rem] p-4 flex flex-col">
       <p className="text-center">
         {

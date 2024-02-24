@@ -6,6 +6,8 @@ import search from "/public/icons/search.svg";
 import { useStateContext } from "@/context";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+
+// Dynamically import WeatherCard to improve page load speed by not server-side rendering it
 const WeatherCard = dynamic(() => import("@/components/WeatherCard"), {
   ssr: false,
 });
@@ -14,6 +16,7 @@ export default function Page() {
   const [input, setInput] = useState("");
   const { weather, thisLocation, values, place, setPlace } = useStateContext();
 
+  // Updates the place state and clears input field upon form submission
   const submitCity = () => {
     setPlace(input);
     setInput("");
@@ -42,6 +45,7 @@ export default function Page() {
       </nav>
       <BackgroundLayout></BackgroundLayout>
       <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center">
+        {/* WeatherCard displays current weather details */}
         <WeatherCard
           place={thisLocation}
           windspeed={weather.wspd}
@@ -51,6 +55,7 @@ export default function Page() {
           iconString={weather.conditions}
           conditions={weather.conditions}
         />
+        {/* MiniCard displays upcoming weather details */}
         <div className="flex justify-center gap-8 flex-wrap w-[60%]">
           {values?.slice(1, 7).map((curr) => {
             return (

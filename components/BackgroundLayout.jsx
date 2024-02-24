@@ -1,4 +1,5 @@
 "use client";
+// Dynamically changes the background image based on current weather conditions
 import { useEffect, useState } from "react";
 import { useStateContext } from "@/context";
 //images
@@ -16,6 +17,7 @@ const BackgroundLayout = () => {
   const [image, setImage] = useState(Clear);
 
   useEffect(() => {
+    // Logic to update the background image based on weather conditions
     if (weather.conditions) {
       let imageString = weather.conditions;
       if (imageString.toLowerCase().includes("clear")) {
