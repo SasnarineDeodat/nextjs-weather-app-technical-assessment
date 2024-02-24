@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+"use client";
+import { useEffect, useState } from "react";
 import sun from "/public/icons/sun.png";
 import cloud from "/public/icons/cloud.png";
 import fog from "/public/icons/fog.png";

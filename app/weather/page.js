@@ -3,7 +3,10 @@ import BackgroundLayout from "@/components/BackgroundLayout";
 import MiniCard from "@/components/MiniCard";
 import React from "react";
 import { useStateContext } from "@/context";
-import WeatherCard from "@/components/WeatherCard";
+import dynamic from "next/dynamic";
+const WeatherCard = dynamic(() => import("@/components/WeatherCard"), {
+  ssr: false,
+});
 
 export default function Page() {
   const { weather, thisLocation, values, place, setPlace } = useStateContext();
